@@ -1,0 +1,16 @@
+{
+  "name": "migrationsequelize",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ryukazari",
+  "license": "ISC",
+  "dependencies": {
+    "pg": "^7.12.1",
+    "sequelize": "^5.19.5",
+    "sequelize-cli": "^5.5.1"
+  }
+}
