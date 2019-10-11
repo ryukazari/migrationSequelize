@@ -76,6 +76,9 @@ module.exports = {
                 allowNull: false,
                 type: Sequelize.DATE
             }
+        }, {
+            schema: 'desarrollo', // default: public, PostgreSQL only.
+            comment: 'Tabla de usuarios del sistema', // comment for table
         });
     },
     down: (queryInterface, Sequelize) => {

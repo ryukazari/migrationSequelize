@@ -1,4 +1,7 @@
 'use strict';
+
+import models from '../models';
+
 export default (sequelize, DataTypes) => {
     const Sugerencia = sequelize.define('Sugerencia', {
         id_sugerencia: DataTypes.INTEGER,
@@ -9,6 +12,8 @@ export default (sequelize, DataTypes) => {
     });
     Sugerencia.associate = function(models) {
         // associations can be defined here
+        models.Usuario.hasMany(models.Sugerencia, { foreignKey: 'id_sugerencia' });
+        models.Sugerencia.belongsTo(models.Usuario, { foreignKey: 'id_sugerencia' });
     };
     return Sugerencia;
 };

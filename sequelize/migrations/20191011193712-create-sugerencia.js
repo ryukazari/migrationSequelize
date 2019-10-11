@@ -10,6 +10,7 @@ module.exports = {
             },
             id_usuario: {
                 type: Sequelize.INTEGER,
+                allowNull: false,
                 references: { model: 'Usuario', key: 'id_usuario' }
             },
             texto_sugerencia: {
@@ -23,6 +24,9 @@ module.exports = {
                 allowNull: false,
                 type: Sequelize.DATE
             }
+        }, {
+            schema: 'desarrollo', // default: public, PostgreSQL only.
+            comment: 'Sugerencia para el sistema por parte del usuario', // comment for table
         });
     },
     down: (queryInterface, Sequelize) => {

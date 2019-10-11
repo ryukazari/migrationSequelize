@@ -4,7 +4,7 @@
         "password": "postgres",
         "database": "migrations",
         "schema": "desarrollo",
-        "host": "127.0.0.1",
+        "host": "172.16.179.31",
         "dialect": "postgres",
         "operatorsAliases": false
     },
