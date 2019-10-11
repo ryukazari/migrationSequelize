@@ -14,7 +14,7 @@ module.exports = {
                 references: {
                     model: {
                         tableName: 'Users',
-                        schema: 'public'
+                        schema: 'dev'
                     },
                     key: 'id'
                 },
@@ -22,7 +22,6 @@ module.exports = {
             }
         });
     },
-
     down: (queryInterface, Sequelize) => {
         return queryInterface.dropTable('Person')
     }

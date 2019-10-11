@@ -1,6 +1,6 @@
 'use strict';
-module.exports = (sequelize, DataTypes) => {
-    const User = sequelize.define('Person', {
+export default (sequelize, DataTypes) => {
+    const Person = sequelize.define('Person', {
         name: DataTypes.STRING,
         isBetaMember: {
             type: Sequelize.BOOLEAN,
@@ -9,21 +9,21 @@ module.exports = (sequelize, DataTypes) => {
         },
         userId: {
             type: Sequelize.INTEGER,
-            references: {
+            /*references: {
                 model: {
                     tableName: 'Users',
                     schema: 'public'
                 },
                 key: 'id'
-            },
+            },*/
             allowNull: false
         }
     }, {});
     Person.associate = function(models) {
-        Person.hasOne(models.user, {
+        /*Person.hasOne(models.user, {
             foreignKey: 'userId',
             as: 'userDetails'
-        });
+        });*/
     };
-    return User;
+    return Person;
 };
