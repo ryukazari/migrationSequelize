@@ -1,7 +1,6 @@
 'use strict';
-export default (sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
     const Usuario = sequelize.define('Usuario', {
-        id_usuario: DataTypes.INTEGER,
         id_sede: DataTypes.INTEGER,
         nombre_usuario: DataTypes.STRING,
         bloqueado: DataTypes.INTEGER,
@@ -23,6 +22,11 @@ export default (sequelize, DataTypes) => {
     });
     Usuario.associate = function(models) {
         // associations can be defined here
+        models.Usuario.belongsToMany(models.Rol, {
+            through: 'UsuarioRol',
+            as: 'rol',
+            foreignKey: 'id_usuario'
+        });
     };
     return Usuario;
 };

@@ -13,7 +13,7 @@ export const Connection = new Sequelize(Config.development.username, Config.deve
     logging: false
 });*/
 
-export const Connection = new Sequelize('migrations', 'postgres', 'postgres', {
+export const sequelize = new Sequelize('migrations', 'postgres', 'postgres', {
     host: '172.16.179.31',
     dialect: 'postgres',
     schema: 'desarrollo',

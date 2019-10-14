@@ -10,6 +10,8 @@ const port = process.env.PORT || 3000;
 app.set('port', port);
 
 import Usuario from './Routes/usuario.routes';
+import Sugerencia from './Routes/sugerencia.routes';
+import Rol from './Routes/rol.routes';
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -24,5 +26,7 @@ app.use((req, res, next) => {
 
 
 app.use('/api/usuario', Usuario);
+app.use('/api/sugerencia', Sugerencia);
+app.use('/api/rol', Rol);
 
 export default app;

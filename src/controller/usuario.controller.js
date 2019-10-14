@@ -1,11 +1,15 @@
 import models from '../../sequelize/models';
-import Sugerencia from '../../sequelize/models/sugerencia';
 
 export function listarUsuarios(req, res) {
     console.log("LISTAR USUARIOS");
     models.Usuario.findAll({
-            attributes: {
-                exclude: ['id']
+            // se puede utilizar el attributes sin el 'exclude' para que solo se muestren esos campos xd
+            attributes: { exclude: ['bloqueado', 'intentos_fallidos_login', 'password', 'image', 'nro_celular', 'nro_telefono', 'verificado', 'token_verificacion'] },
+            /*include: [{ // Notice `include` takes an ARRAY
+                model: models.Sugerencia
+            }],*/
+            where: {
+                //verificado: true
             }
         })
         .then(usuarios => {
@@ -50,4 +54,27 @@ export function agregarUsuario(req, res) {
                 data: {}
             });
         })
+}
+
+export function asignarRol(req, res) {
+    const { id_usuario, id_rol } = req.body;
+    console.log("ASIGNAR USUARIOS");
+    models.UsuarioRol.create({
+            id_usuario,
+            id_rol
+        })
+        .then(usuariorol => {
+
+            res.status(200).json({
+                message: `Se asignó el rol con id ${usuariorol.id_rol} al usuario con id ${usuariorol.id_usuario}.`,
+                data: usuariorol
+            })
+        })
+        .catch(error => {
+            res.status(500).json({
+                message: `Error al asignar Rol`,
+                data: {}
+            })
+        })
+
 }
