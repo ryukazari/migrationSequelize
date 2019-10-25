@@ -3,25 +3,24 @@
         "username": "postgres",
         "password": "postgres",
         "database": "migrations",
-        "schema": "desarrollo",
+        "schema": "sgr-desarrollo",
         "host": "172.16.179.31",
-        "dialect": "postgres",
-        "operatorsAliases": false
+        "dialect": "postgres"
     },
     "test": {
         "username": "postgres",
         "password": "postgres",
         "database": "database_test",
+        "schema": "pruebas",
         "host": "127.0.0.1",
-        "dialect": "postgres",
-        "operatorsAliases": false
+        "dialect": "postgres"
     },
     "production": {
         "username": "postgres",
         "password": "postgres",
         "database": "database_production",
+        "schema": "produccion",
         "host": "127.0.0.1",
-        "dialect": "postgres",
-        "operatorsAliases": false
+        "dialect": "postgres"
     }
 }

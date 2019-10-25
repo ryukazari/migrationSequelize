@@ -1,5 +1,4 @@
-'use strict';
-module.exports = (sequelize, DataTypes) => {
+export default (sequelize, DataTypes) => {
     const Sugerencia = sequelize.define('Sugerencia', {
         id_usuario: DataTypes.INTEGER,
         texto_sugerencia: DataTypes.STRING

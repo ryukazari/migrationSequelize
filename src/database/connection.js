@@ -1,27 +1,15 @@
 import Sequelize from 'sequelize';
-/*import Config from '../../sequelize/config.json';
+import Config from '../../sequelize/config/Config.json';
 
-export const Connection = new Sequelize(Config.development.username, Config.development.password, {
+export const sequelize = new Sequelize(Config.development.database, Config.development.username, Config.development.username, {
     host: Config.development.host,
     dialect: Config.development.dialect,
+    schema: Config.development.schema,
     pool: {
         max: 5,
         min: 0,
-        require: 50000,
-        idle: 60
-    },
-    logging: false
-});*/
-
-export const sequelize = new Sequelize('migrations', 'postgres', 'postgres', {
-    host: '172.16.179.31',
-    dialect: 'postgres',
-    schema: 'desarrollo',
-    pool: {
-        max: 5,
-        min: 0,
-        require: 50000,
-        idle: 60
+        acquire: 30000,
+        idle: 10000
     },
     logging: false
 });

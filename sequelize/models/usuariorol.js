@@ -1,5 +1,4 @@
-'use strict';
-module.exports = (sequelize, DataTypes) => {
+export default (sequelize, DataTypes) => {
     const UsuarioRol = sequelize.define('UsuarioRol', {
         id_usuario: DataTypes.INTEGER,
         id_rol: DataTypes.INTEGER
